@@ -17,7 +17,7 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  winner = []
+  winner = nil
   WIN_COMBINATIONS.each do |combo|
     if combo.all? {|index| board[index] == "X"}
       winner = combo
