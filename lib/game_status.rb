@@ -22,7 +22,7 @@ def won?(board)
   WIN_COMBINATIONS.each do |combo|
     if empty_board || board.full?(board)
       return false
-    end
-    if 
+    else if 
+     
     
 end
