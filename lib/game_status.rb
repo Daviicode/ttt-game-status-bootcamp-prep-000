@@ -17,27 +17,48 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  empty_board = board.all? do {|x| x == " "}
-  winner = []
+  winner = nil
   WIN_COMBINATIONS.each do |combo|
-    if empty_board || board.full?(board)
-      return false
-    else if combo.full? {|position| board[position] == "X"} || combo.full? {|position| board[position] == "O"}
-      return winner = combo
-      end
-    end 
+    if combo.all? {|idx| board[idx] == "X"}
+      winner = combo
+    elsif combo.all? {|idx| board[idx] == "O"}
+      winner = combo
+    else
+      false
+    end
+  end
+  if winner != nil
     winner
-end
-
-def full?(board)
-  board.all? {|index| index == "X" || index == "O"}
-end
-
-def draw?(board)
-  if !won?(board) && full?(board)
-    return true
   else
-    return false
+    false
   end
 end
 
+def full?(board)
+  board.all? {|token| token == "X" || token == "O"}
+end
+
+def draw?(board)
+  if full?(board)
+    if won?(board) == false
+      true
+    else 
+      false
+    end
+  else
+    false
+  end
+end
+  
+def winner(board)
+  winner = nil
+  WIN_COMBINATIONS.each do |combo|
+    if combo.all? {|idx| board[idx] == "X"}
+      winner = "X"
+    elsif combo.all? {|idx| board[idx] == "O"}
+      winner = "O"
+    else
+    end
+  end
+  winner
+end
