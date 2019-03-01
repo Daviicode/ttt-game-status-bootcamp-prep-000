@@ -25,7 +25,6 @@ def won?(board)
     else if combo.full? {|position| board[position] == "X"} || combo.full? {|position| board[position] == "O"}
       return winner = combo
       end
-    end
   winner
 end
 
