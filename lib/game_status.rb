@@ -19,4 +19,5 @@ WIN_COMBINATIONS = [
 def won?(board)
   if board[position] == "" || " "
     return false 
+  end
 end
