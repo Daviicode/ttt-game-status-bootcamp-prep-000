@@ -22,7 +22,8 @@ def won?(board)
   WIN_COMBINATIONS.each do |combo|
     if empty_board || board.full?(board)
       return false
-    else if combo.full? {|position| board[position] == "X"} 
+    else if combo.full? {|position| board[position] == "X"} || combo.full? {|position| board[position] == "O"}
+      return winner
      
     
 end
