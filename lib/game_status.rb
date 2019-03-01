@@ -20,5 +20,6 @@ def won?(board)
   empty_board = board.all? do {|x| x == " "}
   winner = []
   WIN_COMBINATIONS.each do |combo|
+    if empty_board || board.full? 
     
 end
