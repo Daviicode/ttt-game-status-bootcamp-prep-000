@@ -19,7 +19,7 @@ WIN_COMBINATIONS = [
 def won?(board)
   empty_board = board.all? do {|x| x == " "}
   winner = []
-  WIN_COMBINATIONS.each do |combo|
+  WIN_COMBINATIONS.each do {|combo|
     if empty_board || board.full?(board)
       return false
     else if combo.full? {|position| board[position] == "X"} || combo.full? {|position| board[position] == "O"}
