@@ -5,9 +5,8 @@ end
 
 # Define your WIN_COMBINATIONS constant
 
-def WIN_COMBINATIONS(board)
-  const win_combo = []
-end
+WIN_COMBINATIONS = []
+  
 
 def won?(board)
   
